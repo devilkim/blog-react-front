@@ -1,0 +1,158 @@
+$primaray-color: #fafafa;
+$background-color: #ccc;
+$shadow-color: #aaa;
+$tag-color: #77ee55;
+$border-color: #aaa;
+
+$main-section-width: 800px;
+$side-menu-width: 256px;
+$primary-container-width: $main-section-width + $side-menu-width;
+
+// Common
+.sub-title {
+    font-family: 'Times New Roman';
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.border-box {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+.clear {
+    clear: both
+}
+
+.tag-item {
+    background-color: $tag-color;
+    padding: 0 4px;
+    margin: 0 1px;
+    font-size: 12px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;    
+}
+
+.widget {
+    @extend .border-box;
+    padding: 4px 0 12px 0;
+    margin: 0 32px 16px 0;
+    border-bottom: 1px solid $border-color;
+    h2 {
+        @extend .sub-title
+    }    
+}
+
+// Layout
+.main-container {        
+    width: $primary-container-width;
+    margin: 32px auto;
+    background-color: $primaray-color;
+    overflow: hidden;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;    
+    -webkit-box-shadow: 3px 3px 10px 1px $shadow-color;
+    box-shadow: 3px 3px 10px 1px $shadow-color;    
+
+    .common {
+        @extend .border-box;
+        float: left;
+        background-color: $primaray-color;        
+    }
+    header {
+        @extend .common;
+        width: $primary-container-width;
+        height: 100px        
+    }    
+    footer {
+        @extend .common;
+        width: $primary-container-width;
+        height: 100px
+    }    
+    section {
+        @extend .common;
+        width: $main-section-width
+    }    
+    menu {            
+        @extend .common;
+        width: $side-menu-width        
+    }
+}
+
+.main-list {
+    @extend .border-box;
+    margin: 0 0 18px 0;
+    padding: 0 32px;    
+
+    h2 {
+        @extend .sub-title;
+        padding-left: 4px        
+    }
+
+    li {
+        @extend .border-box;
+        display: flex;        
+        padding: 18px 0 12px 0;
+        border-bottom: 1px solid $border-color;
+
+        .main {
+            @extend .border-box;
+            padding-left: 4px;
+            flex: 1;
+            
+            .title {
+                cursor: pointer;
+            }
+
+            .tags {
+                span {
+                    @extend .tag-item;
+                    cursor: pointer;
+                }
+            }
+        }
+        .sub {
+            padding-right: 4px;
+            color: #666;
+            font-size: 14px;
+        }
+    }    
+}
+
+.tag-widget {
+    @extend .widget;
+    ul {
+        padding-top: 4px;        
+        li {
+            padding: 3px 0px;
+            span {
+                @extend .tag-item;
+                cursor: pointer;
+            }
+        }        
+    }        
+}
+
+header {
+    h1 {
+        font-family: 'Times New Roman';
+        font-style: italic;
+        padding: 30px;
+        text-align: center;
+        font-size: 38px;
+    }
+}
+footer {
+    h1 {        
+        font-family: 'Times New Roman';
+        font-style: italic;        
+        padding: 42px;
+        text-align: center
+    }
+}
+
+body {
+    background-color: $background-color; 
+}
+
