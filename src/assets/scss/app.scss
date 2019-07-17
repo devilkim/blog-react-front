@@ -1,3 +1,5 @@
+@import './mixin';
+
 $primaray-color: #fafafa;
 $background-color: #ccc;
 $shadow-color: #aaa;
@@ -45,49 +47,84 @@ $primary-container-width: $main-section-width + $side-menu-width;
 }
 
 // Layout
-.main-container {        
-    width: $primary-container-width;
-    margin: 32px auto;
+.main-container {   
     background-color: $primaray-color;
     overflow: hidden;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    border-radius: 3px 3px 3px 3px;    
-    -webkit-box-shadow: 3px 3px 10px 1px $shadow-color;
-    box-shadow: 3px 3px 10px 1px $shadow-color;    
+    @include respond-to('mobile') {
+        width: 100%;        
+                             
+    }
+    @include respond-to('pc') {
+        width: $primary-container-width;
+        margin: 32px auto;        
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border-radius: 3px 3px 3px 3px;    
+        -webkit-box-shadow: 3px 3px 10px 1px $shadow-color;
+        box-shadow: 3px 3px 10px 1px $shadow-color;     
+    }           
 
     .common {
-        @extend .border-box;
-        float: left;
-        background-color: $primaray-color;        
+        @extend .border-box;                
+        @include respond-to('pc') {            
+            float: left;
+            background-color: $primaray-color;             
+        }        
     }
     header {
         @extend .common;
-        width: $primary-container-width;
-        height: 100px        
+        height: 100px;   
+        @include respond-to('mobile') {            
+            width: 100%;            
+        }
+        @include respond-to('pc') {            
+            width: $primary-container-width;
+        }
     }    
     footer {
         @extend .common;
-        width: $primary-container-width;
-        height: 100px
+        height: 100px;
+        @include respond-to('mobile') {
+            width: 100%;
+        }
+        @include respond-to('pc') {
+            width: $primary-container-width;
+        }
     }    
     section {
-        @extend .common;
-        width: $main-section-width
+        @extend .common;                
+        @include respond-to('mobile') {
+            width: 100%;
+        }
+        @include respond-to('pc') {
+            width: $main-section-width;
+        }
     }    
     menu {            
         @extend .common;
-        width: $side-menu-width        
+        @include respond-to('mobile') {
+            
+            
+ 
+        }
+        @include respond-to('pc') {
+            width: $side-menu-width
+        }
     }
 }
 
 .main-list {
     @extend .border-box;
     margin: 0 0 18px 0;
-    padding: 0 32px;    
+    @include respond-to('mobile') {        
+        padding: 0 16px;
+    }
+    @include respond-to('pc') {        
+        padding: 0 32px;
+    }
 
     h2 {
         @extend .sub-title;
-        padding-left: 4px        
+        padding-left: 4px  
     }
 
     li {
@@ -103,12 +140,22 @@ $primary-container-width: $main-section-width + $side-menu-width;
             
             .title {
                 cursor: pointer;
+                @include respond-to('mobile') {        
+                    display: block;
+                    padding-bottom: 4px;
+                }                
             }
 
             .tags {
                 span {
                     @extend .tag-item;
                     cursor: pointer;
+                    @include respond-to('mobile') {        
+                    
+                    }
+                    @include respond-to('pc') {        
+                        
+                    }
                 }
             }
         }
@@ -135,12 +182,21 @@ $primary-container-width: $main-section-width + $side-menu-width;
 }
 
 header {
-    h1 {
-        font-family: 'Times New Roman';
-        font-style: italic;
-        padding: 30px;
-        text-align: center;
-        font-size: 38px;
+    h1 {    
+        @include respond-to('mobile') {
+            font-family: 'Times New Roman';
+            font-style: italic;            
+            padding: 30px;
+            text-align: center;
+            font-size: 38px        
+        }
+        @include respond-to('pc') {
+            font-family: 'Times New Roman';
+            font-style: italic;            
+            padding: 30px;
+            text-align: center;
+            font-size: 38px        
+        }        
     }
 }
 footer {
