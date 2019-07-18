@@ -1,0 +1,39 @@
+@import './_responsive';
+
+$primary-color: #fafafa;
+$background-color: #ccc;
+$shadow-color: #aaa;
+$tag-color: #77ee55;
+$border-color: #aaa;
+$main-section-width: 800px;
+$side-menu-width: 256px;
+$primary-container-width: $main-section-width + $side-menu-width;
+
+// Common
+.header-font {
+  font-family: 'Times New Roman'; font-style: italic; 
+}
+.sub-title {
+    @extend .header-font; font-size: 18px; font-weight: 400;
+}
+.border-box {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+}
+.clear {
+    clear: both
+}
+.tag-item {
+    background-color: $tag-color; padding: 0 4px; margin: 0 1px; font-size: 12px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;    
+}
+.widget {
+    @extend .border-box;
+    @include respond-to('mobile') {            
+        padding: 4px 0 12px 18px; border-bottom: 1px solid $border-color;
+    }
+    @include respond-to('pc') {            
+        padding: 4px 0 12px 0; margin: 0 32px 16px 0; border-bottom: 1px solid $border-color;
+    }
+    h2 {
+        @extend .sub-title
+    }    
+}

@@ -3,7 +3,9 @@ import React from 'react';
 function Menu(props) {
   return (
     <menu>
-        {props.children}      
+        <div className='background'>          
+          {props.children}
+        </div>        
     </menu>
   );
 }

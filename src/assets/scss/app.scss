@@ -1,57 +1,13 @@
-@import './mixin';
-
-$primaray-color: #fafafa;
-$background-color: #ccc;
-$shadow-color: #aaa;
-$tag-color: #77ee55;
-$border-color: #aaa;
-$main-section-width: 800px;
-$side-menu-width: 256px;
-$primary-container-width: $main-section-width + $side-menu-width;
-
-// Common
-.sub-title {
-    font-family: 'Times New Roman';
-    font-style: italic;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.border-box {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; 
-}
-.clear {
-    clear: both
-}
-
-.tag-item {
-    background-color: $tag-color;
-    padding: 0 4px;
-    margin: 0 1px;
-    font-size: 12px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;    
-}
-
-.widget {
-    @extend .border-box;
-    padding: 4px 0 12px 0;
-    margin: 0 32px 16px 0;
-    border-bottom: 1px solid $border-color;
-    h2 {
-        @extend .sub-title
-    }    
-}
+@import './_responsive';
+@import './_reset';
+@import './_common';
 
 // Layout
 .main-container {   
-    background-color: $primaray-color;
+    background-color: $primary-color;
     overflow: hidden;
     @include respond-to('mobile') {
-        width: 100%;        
-                             
+        width: 100%;                                     
     }
     @include respond-to('pc') {
         width: $primary-container-width;
@@ -60,13 +16,12 @@ $primary-container-width: $main-section-width + $side-menu-width;
         border-radius: 3px 3px 3px 3px;    
         -webkit-box-shadow: 3px 3px 10px 1px $shadow-color;
         box-shadow: 3px 3px 10px 1px $shadow-color;     
-    }           
-
+    }
     .common {
         @extend .border-box;                
         @include respond-to('pc') {            
             float: left;
-            background-color: $primaray-color;             
+            background-color: $primary-color;
         }        
     }
     header {
@@ -99,14 +54,27 @@ $primary-container-width: $main-section-width + $side-menu-width;
         }
     }    
     menu {            
-        @extend .common;
+        @extend .common;        
         @include respond-to('mobile') {
-            
-            
- 
+            position: absolute;            
+            background-color: RGBA(0, 0, 0, 0.3);
+            top: 0px;
+            right: 0px;
+            width: 100%;
+            min-height: 100%;
         }
         @include respond-to('pc') {
             width: $side-menu-width
+        }
+        div.background {
+            background-color: $primary-color;
+            @include respond-to('mobile') {                    
+                background-color: $primary-color;                
+                margin-left: 10%;
+                width: 90%;
+                height: 100%;
+                padding: 24px 0 24px 0;
+            }
         }
     }
 }
@@ -120,23 +88,19 @@ $primary-container-width: $main-section-width + $side-menu-width;
     @include respond-to('pc') {        
         padding: 0 32px;
     }
-
     h2 {
         @extend .sub-title;
         padding-left: 4px  
     }
-
     li {
         @extend .border-box;
         display: flex;        
         padding: 18px 0 12px 0;
         border-bottom: 1px solid $border-color;
-
         .main {
             @extend .border-box;
             padding-left: 4px;
-            flex: 1;
-            
+            flex: 1;            
             .title {
                 cursor: pointer;
                 @include respond-to('mobile') {        
@@ -144,7 +108,6 @@ $primary-container-width: $main-section-width + $side-menu-width;
                     padding-bottom: 4px;
                 }                
             }
-
             .tags {
                 span {
                     @extend .tag-item;
@@ -182,26 +145,15 @@ $primary-container-width: $main-section-width + $side-menu-width;
 
 header {
     h1 {    
-        @include respond-to('mobile') {
-            font-family: 'Times New Roman';
-            font-style: italic;            
-            padding: 30px;
-            text-align: center;
-            font-size: 38px        
-        }
-        @include respond-to('pc') {
-            font-family: 'Times New Roman';
-            font-style: italic;            
-            padding: 30px;
-            text-align: center;
-            font-size: 38px        
-        }        
+        @extend .header-font;
+        padding: 30px;
+        text-align: center;
+        font-size: 38px            
     }
 }
 footer {
     h1 {        
-        font-family: 'Times New Roman';
-        font-style: italic;        
+        @extend .header-font;
         padding: 42px;
         text-align: center
     }

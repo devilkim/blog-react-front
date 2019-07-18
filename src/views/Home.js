@@ -31,7 +31,9 @@ function Home() {
             <BlogList title='Recently' data={data} handleClickItem={(type, item) => {console.log(type, item)}} />            
         </MainView>
         <Menu>
-            <TagWidget title='Tags' data={tags} handleClickTag={(tag) => {console.log(tag)}} />            
+            <TagWidget title='Tags' data={tags} handleClickTag={(tag) => {console.log(tag)}} />
+            <TagWidget title='Tags' data={tags} handleClickTag={(tag) => {console.log(tag)}} />
+            <TagWidget title='Tags' data={tags} handleClickTag={(tag) => {console.log(tag)}} />
         </Menu>        
         <Footer message='Copyright 2019. devilkim. All rights reserved.' />
     </Container>
