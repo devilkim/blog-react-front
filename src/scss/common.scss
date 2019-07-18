@@ -1,15 +1,3 @@
-@import './_responsive';
-
-$primary-color: #fafafa;
-$background-color: #ccc;
-$shadow-color: #aaa;
-$tag-color: #77ee55;
-$border-color: #aaa;
-$main-section-width: 800px;
-$side-menu-width: 256px;
-$primary-container-width: $main-section-width + $side-menu-width;
-
-// Common
 .header-font {
   font-family: 'Times New Roman'; font-style: italic; 
 }
@@ -23,7 +11,7 @@ $primary-container-width: $main-section-width + $side-menu-width;
     clear: both
 }
 .tag-item {
-    background-color: $tag-color; padding: 0 4px; margin: 0 1px; font-size: 12px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;    
+    background-color: $tag-color; padding: 0 4px; margin: 0 1px; font-size: 12px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; cursor: pointer
 }
 .widget {
     @extend .border-box;
@@ -36,4 +24,13 @@ $primary-container-width: $main-section-width + $side-menu-width;
     h2 {
         @extend .sub-title
     }    
+}
+button {
+    font-family: 'Times New Roman'; 
+    font-style: italic; 
+    border: 0;
+    font-size: 12px;
+    color: #333;
+    border-bottom: 1px solid #333;
+    background: 0;
 }

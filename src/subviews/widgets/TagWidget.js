@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './TagWidget.scss';
+
 function TagWidget(props) {
   return (
     <div className='tag-widget'>

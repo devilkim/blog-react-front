@@ -1,0 +1,89 @@
+@import './index';
+
+// Common
+body {
+  background-color: $background-color; 
+}
+._common {
+  @extend .border-box;                
+  @include respond-to('pc') {            
+      float: left;
+      background-color: $primary-color;
+  }        
+}
+//App.jsx
+#app {   
+  background-color: $primary-color;
+  overflow: hidden;
+  @include respond-to('mobile') {
+      width: 100%;                                     
+  }
+  @include respond-to('pc') {
+      width: $primary-container-width;
+      margin: 32px auto;        
+      -webkit-border-radius: 3px 3px 3px 3px;
+      border-radius: 3px 3px 3px 3px;    
+      -webkit-box-shadow: 3px 3px 10px 1px $shadow-color;
+      box-shadow: 3px 3px 10px 1px $shadow-color;     
+  }  
+  header {
+      @extend ._common;
+      height: 100px;   
+      @include respond-to('mobile') {            
+          width: 100%;            
+      }
+      @include respond-to('pc') {            
+          width: $primary-container-width;
+      }
+      h1 {    
+          @extend .header-font;
+          text-align: center;
+          padding: 30px;
+          font-size: 38px
+      }
+  }    
+  footer {
+      @extend ._common;
+      height: 100px;
+      @include respond-to('mobile') {
+          width: 100%;
+      }
+      @include respond-to('pc') {
+          width: $primary-container-width;
+      }
+      h1 {        
+          @extend .header-font;
+          text-align: center;
+          padding: 42px
+      }
+  }    
+  section {
+    @extend ._common;
+    width: 100%;
+    padding: 4px 36px;
+    height: 38px;    
+  }
+  main {
+      @extend ._common;                
+      @include respond-to('mobile') {
+          width: 100%;
+      }
+      @include respond-to('pc') {
+          width: $main-section-width;
+      }
+  }    
+  aside {            
+      @extend ._common;        
+      @include respond-to('mobile') {
+          position: absolute;            
+          background-color: RGBA(0, 0, 0, 0.3);
+          top: 0px;
+          right: 0px;
+          width: 100%;
+          min-height: 100%;
+      }
+      @include respond-to('pc') {
+          width: $side-menu-width
+      }        
+  }
+}

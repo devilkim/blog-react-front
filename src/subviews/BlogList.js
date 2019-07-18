@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './BlogList.scss';
+
 function TagItem(props) {    
     return (
       <span onClick={() => {props.handleClickItem(props.data)}}>

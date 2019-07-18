@@ -1,0 +1,51 @@
+@import '../index';
+
+.main-list {
+  @extend .border-box;
+  margin: 0 0 18px 0;
+  @include respond-to('mobile') {        
+      padding: 0 16px;
+  }
+  @include respond-to('pc') {        
+      padding: 0 32px;
+  }
+  h2 {
+      @extend .sub-title;
+      padding-left: 4px  
+  }
+  li {
+      @extend .border-box;
+      display: flex;        
+      padding: 18px 0 12px 0;
+      border-bottom: 1px solid $border-color;
+      .main {
+          @extend .border-box;
+          padding-left: 4px;
+          flex: 1;            
+          .title {
+              cursor: pointer;
+              @include respond-to('mobile') {        
+                  display: block;
+                  padding-bottom: 4px;
+              }                
+          }
+          .tags {
+              span {
+                  @extend .tag-item;
+                  cursor: pointer;
+                  @include respond-to('mobile') {        
+                  
+                  }
+                  @include respond-to('pc') {        
+                      
+                  }
+              }
+          }
+      }
+      .sub {
+          padding-right: 4px;
+          color: #666;
+          font-size: 14px;
+      }
+  }    
+}

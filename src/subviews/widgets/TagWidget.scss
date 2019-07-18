@@ -1,0 +1,16 @@
+@import '../../index';
+
+.tag-widget {
+  @extend .widget;
+  ul {
+      padding-top: 4px;        
+      li {
+          padding: 3px 0px;
+          span {
+              @extend .tag-item;
+              cursor: pointer;
+          }
+      }        
+  }        
+}
+

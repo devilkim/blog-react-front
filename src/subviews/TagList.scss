@@ -1,0 +1,12 @@
+@import '../index';
+
+.tag-list {
+  float: left;
+  span.title {
+    @extend .header-font;
+  }
+  span.tag {
+    @extend .tag-item;  
+  }
+}
+
