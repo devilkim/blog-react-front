@@ -2,9 +2,9 @@ import React from 'react';
 
 function BlogForm() {
   return (
-    <main>
+    <div>
         BlogForm
-    </main>    
+    </div>    
   );
 }
 

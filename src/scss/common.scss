@@ -1,36 +1,44 @@
+@mixin border-box {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;    
+  border-radius: $radius;
+}
+@mixin box-shadow($a, $b, $c, $d, $e) {
+  -webkit-box-shadow: $a $b $c $d $e;
+  box-shadow:  $a $b $c $d $e;
+}
+
 .header-font {
   font-family: 'Times New Roman'; font-style: italic; 
 }
 .sub-title {
-    @extend .header-font; font-size: 18px; font-weight: 400;
-}
-.border-box {
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+  @extend .header-font; font-size: 18px; font-weight: 400;
 }
 .clear {
-    clear: both
+  clear: both
 }
 .tag-item {
-    background-color: $tag-color; padding: 0 4px; margin: 0 1px; font-size: 12px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; cursor: pointer
+  @include border-radius(5px);
+  background-color: $tag-color; padding: 0 4px; margin: 0 1px; font-size: 12px; cursor: pointer
 }
 .widget {
-    @extend .border-box;
-    @include respond-to('mobile') {            
-        padding: 4px 0 12px 18px; border-bottom: 1px solid $border-color;
-    }
-    @include respond-to('pc') {            
-        padding: 4px 0 12px 0; margin: 0 32px 16px 0; border-bottom: 1px solid $border-color;
-    }
-    h2 {
-        @extend .sub-title
-    }    
+  @include border-box();
+  @include respond-to('mobile') {            
+    padding: 4px 0 12px 18px; border-bottom: $border;
+  }
+  @include respond-to('pc') {            
+    padding: 4px 0 12px 0; margin: 0 32px 16px 0; border-bottom: $border;
+  }
+  h2 {
+    @extend .sub-title
+  }    
 }
-button {
-    font-family: 'Times New Roman'; 
-    font-style: italic; 
-    border: 0;
-    font-size: 12px;
-    color: #333;
-    border-bottom: 1px solid #333;
-    background: 0;
+button.small {        
+  color: $sub-font-color;
+  border-radius: 2px;
+  border: $border;
+  background-color: $primary-color;  
 }
