@@ -13,7 +13,7 @@ function Home(props) {
     ];    
   return (
     <div>      
-      <BlogList title='Recently' data={data} handleClickItem={(type, item) => {console.log(type, item)}} />  
+      <BlogList title='Recently' data={data} handleClickItem={(type, item) => {props.history.push('/view?no=' + item.no)}} />  
     </div>    
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import Home from './views/Home';
 import BlogForm from './views/BlogForm';
+import BlogView from './views/BlogView';
 
 import TagList from './subviews/TagList';
 import ButtonList from './subviews/ButtonList';
@@ -28,7 +29,8 @@ function App(props) {
         <main>          
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/form" component={BlogForm} />          
+            <Route path="/form" component={BlogForm} />
+            <Route path="/view" component={BlogView} />
           </Switch>           
         </main>      
         <aside>
