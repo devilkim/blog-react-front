@@ -1,10 +1,10 @@
 import React from 'react';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import CKEditor from 'ckeditor4-react';
 
 import './BlogForm.scss';
 
 function BlogForm() {
+  
   return (
     <table className='form'>
       <colgroup>
@@ -39,24 +39,8 @@ function BlogForm() {
         <tr> 
           <th className='top'>내용</th>         
           <td>
-          <CKEditor
-                editor={ ClassicEditor }
-                data="<p>Hello from CKEditor 5!</p>"
-                onInit={ editor => {
-                    // You can store the "editor" and use when it is needed.
-                    console.log( 'Editor is ready to use!', editor );
-                } }
-                onChange={ ( event, editor ) => {
-                    const data = editor.getData();
-                    console.log( { event, editor, data } );
-                } }
-                onBlur={ editor => {
-                    console.log( 'Blur.', editor );
-                } }
-                onFocus={ editor => {
-                    console.log( 'Focus.', editor );
-                } }
-            />
+            <CKEditor
+              data="<p>Hello from CKEditor 4!</p>" />
           </td>
         </tr>
       </tbody>

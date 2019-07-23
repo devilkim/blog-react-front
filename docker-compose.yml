@@ -14,6 +14,7 @@ services:
     command:
       - /bin/bash
       - -c
-      - |        
+      - | 
+        npm install --save ckeditor4-react
         npm install
         npm start

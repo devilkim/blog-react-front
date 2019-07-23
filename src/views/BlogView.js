@@ -1,7 +1,5 @@
 import React from 'react';
 import TagList from '../subviews/TagList';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import './BlogView.scss';
 
@@ -26,6 +24,7 @@ function BlogView() {
   
   <hr />
   <p><small>Source: <a href="http://en.wikipedia.org/wiki/Trabb_Pardo%E2%80%93Knuth_algorithm">Wikipedia.org</a></small></p>`};
+  // console.log(Bold);
   return (
     <div className='view'>
       <h2>
@@ -41,33 +40,7 @@ function BlogView() {
         <div className='clear'></div>
       </div>      
       <div className='contents'>
-        <CKEditor
-          editor={ ClassicEditor }
-          config={{
-            heading: {
-              options: [
-                  { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                  { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                  { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-              ]
-          }
-          }}
-          data={data.contents}
-          onInit={ editor => {
-              // You can store the "editor" and use when it is needed.
-              console.log( 'Editor is ready to use!', editor );
-          } }
-          onChange={ ( event, editor ) => {
-              const data = editor.getData();
-              console.log( { event, editor, data } );
-          } }
-          onBlur={ editor => {
-              console.log( 'Blur.', editor );
-          } }
-          onFocus={ editor => {
-              console.log( 'Focus.', editor );
-          } }
-        />
+       
       </div>      
     </div>
   );
