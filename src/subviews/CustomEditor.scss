@@ -1,0 +1,76 @@
+@import '../index';
+
+#editor.write-mode {
+  border: $border;
+  background: white;  
+}
+#editor.view-mode {
+  border-top: $border;
+}
+#editor.view-mode .ck.ck-editor__editable_inline>:first-child {
+  margin-top: 8px
+}
+#editor {
+  h1 {
+    font-size: 24px;
+    padding: 10px 0;       
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 22px;
+    padding: 10px 0;    
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 20px;
+    padding: 10px 0;    
+    font-weight: 400;
+  }
+  p {    
+    line-height: 24px;
+  }
+  strong {
+    font: inherit;
+    color: inherit;
+    font-weight: 500;
+  }
+  i {
+    font: inherit;
+    color: inherit;
+    font-style: italic
+  }
+  u {
+    font: inherit;
+    color: inherit;
+    text-decoration: underline
+  }
+  s {
+    font: inherit;
+    color: inherit;
+    text-decoration: line-through
+  }
+  sub {
+    font: inherit;
+    color: inherit;
+  }
+  sub {
+    font: inherit;
+    color: inherit;
+  }
+  ul {
+    list-style: circle inside none;    
+    line-height: 24px;
+    margin-left: 16px;
+    ul {
+      list-style: disc inside none;
+      ul {
+        list-style: square inside none;
+      }
+    }
+  }
+  ol {
+    list-style: decimal inside none;    
+    line-height: 24px;
+    margin-left: 16px;
+  }
+}

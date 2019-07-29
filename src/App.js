@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import Home from './views/Home';
-import BlogForm from './views/BlogForm';
+import BlogAddView from './views/BlogAddView';
 import BlogView from './views/BlogView';
 
 import TagList from './subviews/TagList';
@@ -11,10 +11,10 @@ import './App.scss';
 
 function App(props) {
   const tags = [
-    {no: 1, title: '넥슨'}, 
-    {no: 1, title: '넥라'}, 
-    {no: 1, title: 'docker'}, 
-    {no: 1, title: 'elk'}
+    {no: 1, name: '넥슨'}, 
+    {no: 1, name: '넥라'}, 
+    {no: 1, name: 'docker'}, 
+    {no: 1, name: 'elk'}
   ];  
   return (        
       <div id="app">
@@ -24,12 +24,12 @@ function App(props) {
         </header>        
         <section>
           <TagList title='Tags' data={tags} handleClickTag={(tag) => {console.log(tag)}} />          
-          <ButtonList titles={['Write']} handleClickButton={index => {props.history.push('/form')}}/>
+          <ButtonList titles={['Write']} handleClickButton={index => {props.history.push('/add')}}/>
         </section>
         <main>          
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/form" component={BlogForm} />
+            <Route path="/add" component={BlogAddView} />
             <Route path="/view" component={BlogView} />
           </Switch>           
         </main>      

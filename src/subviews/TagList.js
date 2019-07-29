@@ -8,7 +8,7 @@ function TagList(props) {
         <span className='title'>{props.title}</span>
         <span>&nbsp;</span>
         {props.data.map((item, index) => 
-          <span key={index} className='tag' onClick={() => {props.handleClickTag(item)}}>#{item.title}</span>
+          <span key={index} className='tag' onClick={() => {props.handleClickTag(item)}}>#{item.name}</span>
         )}
     </div>
   );

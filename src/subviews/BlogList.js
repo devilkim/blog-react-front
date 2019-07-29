@@ -5,7 +5,7 @@ import './BlogList.scss';
 function TagItem(props) {    
 	return (
 		<span onClick={() => {props.handleClickItem(props.data)}}>
-			#{props.data.title}
+			#{props.data.name}
 		</span>
 	);
 }

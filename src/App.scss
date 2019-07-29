@@ -58,10 +58,17 @@ body {
     }
   }    
   section {
-    @extend ._common;
-    width: $primary-container-width;
-    padding: 4px 36px;
-    height: 38px;    
+    @extend ._common;        
+    height: 38px;
+    @include respond-to('mobile') {      
+      width: 100%;
+      padding: 4px 18px;
+
+    }
+    @include respond-to('pc') {
+      width: $primary-container-width;      
+      padding: 4px 36px;
+    }    
   }
   main {
     @extend ._common;                

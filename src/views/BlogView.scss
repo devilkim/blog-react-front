@@ -2,23 +2,51 @@
 
 div.view {
   width: 100%;
-  padding: 0 36px;
+  @include respond-to('mobile') {            
+    @include border-box;
+    padding: 0 18px;    
+  }
+  @include respond-to('pc') {
+    padding: 0 36px;
+  }   
   h2 span.title{
-    font-size: 24px;
-    padding-top: 10px;
-    padding-left: 4px;
+    @include respond-to('mobile') {            
+      font-size: 24px;
+      display: block;
+    }
+    @include respond-to('pc') {
+      font-size: 24px;
+      padding-top: 10px;
+      padding-left: 4px;
+    }
   }
   h2 span.date {
-    padding-top: 8px;
-    padding-left: 4px;
     font-size: 12px;
-    color: $sub-font-color
+    color: $sub-font-color;
+    @include respond-to('mobile') {
+      display: block;
+      padding-top: 4px;
+    }
+    @include respond-to('pc') {
+      padding-top: 8px;
+      padding-left: 4px;      
+    }     
   }
   div.tags {    
-    padding-top: 8px;    
+    @include respond-to('mobile') {            
+      padding-top: 8px;
+    }
+    @include respond-to('pc') {
+      padding-top: 8px;    
+    }     
   }
   div.contents {
-    padding-top: 24px;
-    padding-left: 4px;
+    @include respond-to('mobile') {            
+      padding-top: 12px;
+    }
+    @include respond-to('pc') {
+      padding-top: 12px;
+      padding-left: 4px;
+    }     
   }
 }

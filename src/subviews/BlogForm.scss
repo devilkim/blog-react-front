@@ -1,0 +1,46 @@
+@import '../index';
+
+table.form {
+  width: 100%;  
+  tr.show {
+    display: table-row
+  }
+  tr.hide {
+    display: none
+  }
+  th {
+    @include respond-to('mobile') {            
+      display: none;
+    }
+    @include respond-to('pc') {
+      vertical-align: middle;
+      height: 48px;
+    }        
+  }
+  th.top {
+    @include respond-to('mobile') {            
+      display: none
+    }
+    @include respond-to('pc') {
+      padding-top: 12px;
+      vertical-align: top;
+    }     
+  }
+  td {
+    @include respond-to('mobile') {            
+      padding: 8px 18px;
+    }
+    @include respond-to('pc') {
+      vertical-align: middle;
+      height: 48px;    
+    }         
+  }
+  tfoot {
+    td {
+      @include respond-to('pc') {            
+        padding-top: 12px;
+      }
+      text-align: center
+    }
+  }
+}

@@ -6,15 +6,15 @@ services:
     image: node:10
     working_dir: /app
     ports:
-      - "3000:3000"
+      - "8030:3000"
     volumes:
       - ./:/app
     environment:
-      - CHOKIDAR_USEPOLLING=1  
+      CHOKIDAR_USEPOLLING: 1  
+      SERVER_HOST: http://localhost:8030
     command:
       - /bin/bash
       - -c
       - | 
-        npm install --save ckeditor4-react
         npm install
         npm start
