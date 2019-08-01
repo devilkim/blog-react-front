@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import BlogList from '../subviews/BlogList';
 import Board from '../models/Board';
 
-function Home(props) {        
+function BlogListView(props) {        
   const [boards, setBoards] = useState([]);
   
   const loadBoards = async () => {    
@@ -13,8 +13,8 @@ function Home(props) {
   const handleClickItem = (type, item) => {
     if (type === 'item') {
       props.history.push('/view?no=' + item.no);
-    } else if (type === 'tag') {
-      console.info('To do');
+    } else if (type === 'tag') {      
+      props.history.push('/blogs/tag?name=' + item.name);
     }    
   };
   
@@ -28,4 +28,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default BlogListView;

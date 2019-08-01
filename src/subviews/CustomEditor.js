@@ -32,6 +32,9 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import './CustomEditor.scss';
 
 const editorConfiguration = {
+  ckfinder: {
+    uploadUrl: "http://localhost:3000/v1/upload/image"
+  },
   plugins: [ Essentials, Bold, Italic, Underline, Strikethrough, Paragraph, Alignment, 
     Heading, Highlight, Link, List, BlockQuote, 
     EasyImage, Image, ImageCaption, ImageStyle, ImageToolbar, ImageUpload, 

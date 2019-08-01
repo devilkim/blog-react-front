@@ -22,7 +22,7 @@
 }
 .tag-item {
   @include border-radius(5px);
-  background-color: $tag-color; padding: 0 4px; margin: 0 1px; font-size: 12px; cursor: pointer
+  font-style: normal; background-color: $tag-color; padding: 0 4px; margin: 0 1px; font-size: 12px; cursor: pointer; color: $font-color
 }
 .widget {
   @include border-box();
