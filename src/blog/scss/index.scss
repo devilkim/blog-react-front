@@ -1,0 +1,37 @@
+@import '../../index';
+
+// Common
+body {
+  background-color: $background-color; 
+}
+._common {
+  @include border-box();
+  @include respond-to('pc') {            
+    float: left;
+    background-color: $primary-color;
+  }        
+}
+
+//App.jsx
+#app {   
+  background-color: $primary-color;
+  overflow: hidden;
+  @include respond-to('mobile') {
+    width: 100%;                                     
+  }
+  @include respond-to('pc') {
+    @include border-radius(3px);
+    @include box-shadow(3px, 3px, 10px, 1px, $shadow-color);
+    width: $primary-container-width;
+    margin: 32px auto;      
+  }  
+  main {
+    @extend ._common;                
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+    @include respond-to('pc') {
+      width: $main-section-width;
+    }
+  }    
+}

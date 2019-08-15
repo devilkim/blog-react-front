@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import TagList from './TagList';
-import CustomEditor from './CustomEditor';
+import CustomEditor from '../../utils/CustomEditor';
 
-import './BlogForm.scss';
+import './scss/BlogForm.scss';
 
 const BlogForm = (props) => {  
   const [title, setTitle] = useState(props.title === undefined ? '' : props.title);

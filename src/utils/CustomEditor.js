@@ -29,7 +29,7 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 
-import './CustomEditor.scss';
+import './scss/CustomEditor.scss';
 
 const editorConfiguration = {
   ckfinder: {

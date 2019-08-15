@@ -1,0 +1,16 @@
+@import '../../../index';
+
+#app {     
+  aside {                
+    @include border-box();
+    @include respond-to('mobile') {          
+      // not to do
+    }
+    @include respond-to('pc') {
+      float: left;
+      background-color: $primary-color;      
+      width: $side-menu-width;
+      min-height: 600px;
+    }        
+  }
+}

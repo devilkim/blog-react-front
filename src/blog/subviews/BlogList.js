@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './BlogList.scss';
+import './scss/BlogList.scss';
 
 function TagItem(props) {    
 	return (

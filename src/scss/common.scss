@@ -55,7 +55,7 @@ button.medium {
   padding: 8px 32px;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
   @include respond-to('mobile') {            
     @include border-box();
     width: 100%;

@@ -1,0 +1,17 @@
+@import '../../../index';
+
+#app {     
+  section {    
+    @include border-box();
+    height: 38px;
+    @include respond-to('mobile') {      
+      width: 100%;
+      padding: 4px 18px;
+
+    }
+    @include respond-to('pc') {
+      width: $primary-container-width;      
+      padding: 64px 36px;
+    }    
+  }
+}

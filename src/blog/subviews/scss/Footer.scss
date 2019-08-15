@@ -1,0 +1,21 @@
+@import '../../../index';
+
+#app {   
+  footer {    
+    @include border-box();
+    height: 100px;
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+    @include respond-to('pc') {
+      float: left;
+      background-color: $primary-color;
+      width: $primary-container-width;
+    }
+    h1 {        
+      @extend .header-font;
+      text-align: center;
+      padding: 42px
+    }
+  }
+}   

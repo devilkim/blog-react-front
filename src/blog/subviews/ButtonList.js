@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ButtonList.scss';
+import './scss/ButtonList.scss';
 
 function ButtonList(props) {
   return (

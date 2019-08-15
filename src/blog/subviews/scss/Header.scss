@@ -1,0 +1,26 @@
+@import '../../../index';
+
+#app {     
+  header {
+    @include border-box();     
+    height: 100px;   
+    @include respond-to('mobile') {            
+      width: 100%;
+    }
+    @include respond-to('pc') {            
+      float: left;
+      background-color: $primary-color;
+      width: $primary-container-width;
+    }
+    h1 {    
+      @extend .header-font;
+      text-align: center;
+      padding: 30px;
+      font-size: 38px;
+      cursor: pointer;
+    }
+    h1.login {    
+      background: linear-gradient($tag-color, $primary-color)
+    }
+  }  
+}
